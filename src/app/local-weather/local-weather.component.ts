@@ -7,10 +7,8 @@ import { Component, OnInit } from '@angular/core';
 })
 export class LocalWeatherComponent implements OnInit {
 
-  zipcode: string;
+  constructor() {
 
-  constructor(zipcode: string) {
-    this.zipcode = zipcode;
   }
 
   ngOnInit() {
