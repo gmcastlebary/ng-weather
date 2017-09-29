@@ -9,7 +9,6 @@ export class WeatherService {
   constructor(private http: HttpClient) { }
 
   getWeatherFor(zipCode: string) {
-    console.log("sent http for " + zipCode);
     let params: HttpParams = new HttpParams().append('zip', zipCode + ',us').append('units', 'imperial')
       .append('APPID', this.appID);
     return this.http.get(this.baseUrl, {params: params} );

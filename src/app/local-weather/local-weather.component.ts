@@ -1,14 +1,17 @@
-import {Component, Input, OnInit} from '@angular/core';
+import {Component, Input, OnDestroy, OnInit} from '@angular/core';
 import {WeatherService} from "../weather.service";
+import {Weather} from "../Weather";
+import {Subscription} from "rxjs/Subscription";
 
 @Component({
   selector: 'app-local-weather',
   templateUrl: './local-weather.component.html',
   styleUrls: ['./local-weather.component.css']
 })
-export class LocalWeatherComponent implements OnInit {
+export class LocalWeatherComponent implements OnInit, OnDestroy {
 
   weatherData;
+  subscription: Subscription;
 
   @Input()
   zip: string;
@@ -16,6 +19,10 @@ export class LocalWeatherComponent implements OnInit {
   constructor(private weatherService: WeatherService) {}
 
   ngOnInit() {
-    this.weatherService.getWeatherFor(this.zip).subscribe( result => this.weatherData = result);
+    this.subscription = this.weatherService.getWeatherFor(this.zip).subscribe( result => this.weatherData = result);
+  }
+
+  ngOnDestroy() {
+    this.subscription.unsubscribe();
   }
 }
