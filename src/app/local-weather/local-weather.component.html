@@ -1,5 +1,9 @@
 <div class="panel panel-default">
-  Weather for {{zip}}!
-  <br>
-
+  <h1>Weather for {{weatherData?.name}}, ({{zip}})</h1>
+  <div style="text-align:left">
+    <h3>Temperatures for  Today:</h3>
+    Current Temperature: {{weatherData?.main.temp}}<br>
+    Minimum Temperature: {{weatherData?.main.temp_min}}<br>
+    Maximum Temperature {{weatherData?.main.temp_max}}<br>
+  </div>
 </div>

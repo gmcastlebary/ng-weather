@@ -1,6 +1,5 @@
 import {Component, Input, OnDestroy, OnInit} from '@angular/core';
 import {WeatherService} from "../weather.service";
-import {Weather} from "../Weather";
 import {Subscription} from "rxjs/Subscription";
 
 @Component({
@@ -19,7 +18,7 @@ export class LocalWeatherComponent implements OnInit, OnDestroy {
   constructor(private weatherService: WeatherService) {}
 
   ngOnInit() {
-    this.subscription = this.weatherService.getWeatherFor(this.zip).subscribe( result => this.weatherData = result);
+    this.subscription = this.weatherService.getWeatherFor(this.zip).subscribe( result => this.weatherData = result, error => console.log(error));
   }
 
   ngOnDestroy() {
