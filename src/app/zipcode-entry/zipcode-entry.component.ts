@@ -1,5 +1,4 @@
 import { Component, OnInit } from '@angular/core';
-import {ZipdataService} from '../zipdata.service';
 
 @Component({
   selector: 'app-zipcode-entry',
@@ -9,13 +8,13 @@ import {ZipdataService} from '../zipdata.service';
 export class ZipcodeEntryComponent implements OnInit {
 
 
-  constructor(private zipDataService: ZipdataService) { }
+  constructor() { }
 
   ngOnInit() {
   }
 
   addLocation(location: string) {
-    this.zipDataService.addLocation(location);
+    console.log(location);
   }
 
 }

@@ -3,7 +3,6 @@ import { NgModule } from '@angular/core';
 
 import { AppComponent } from './app.component';
 import { ZipcodeEntryComponent } from './zipcode-entry/zipcode-entry.component';
-import {ZipdataService} from "./zipdata.service";
 import {FormsModule} from "@angular/forms";
 import { LocalWeatherComponent } from './local-weather/local-weather.component';
 import { LocalWeatherListComponent } from './local-weather-list/local-weather-list.component';
@@ -18,7 +17,7 @@ import { LocalWeatherListComponent } from './local-weather-list/local-weather-li
   imports: [
     BrowserModule, FormsModule
   ],
-  providers: [ZipdataService],
+  providers: [],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

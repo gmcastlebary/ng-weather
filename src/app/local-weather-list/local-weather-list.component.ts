@@ -1,6 +1,4 @@
 import { Component, OnInit } from '@angular/core';
-import {ZipdataService} from "../zipdata.service";
-import {Subscription} from "rxjs/Subscription";
 
 @Component({
   selector: 'app-local-weather-list',
@@ -9,11 +7,7 @@ import {Subscription} from "rxjs/Subscription";
 })
 export class LocalWeatherListComponent implements OnInit {
 
-  localWeathers: string[] = [];
-  zipSub: Subscription;
-
-  constructor(private zipDataService: ZipdataService) {
-    this.zipSub = zipDataService.getList().subscribe( result => this.localWeathers = result, error => console.log(error));
+  constructor() {
   }
 
   ngOnInit() {
