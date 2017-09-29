@@ -8,9 +8,15 @@ import {ZipdataService} from '../zipdata.service';
 })
 export class ZipcodeEntryComponent implements OnInit {
 
-  constructor(zipDataService: ZipdataService) { }
+  zip;
+
+  constructor(private zipDataService: ZipdataService) { }
 
   ngOnInit() {
+  }
+
+  addLocation(location: string) {
+    this.zipDataService.addLocation(location);
   }
 
 }
