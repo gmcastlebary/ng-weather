@@ -6,6 +6,8 @@ import { ZipcodeEntryComponent } from './zipcode-entry/zipcode-entry.component';
 import {FormsModule} from "@angular/forms";
 import { LocalWeatherComponent } from './local-weather/local-weather.component';
 import { LocalWeatherListComponent } from './local-weather-list/local-weather-list.component';
+import {WeatherService} from "./weather.service";
+import {HttpClientModule} from "@angular/common/http";
 
 @NgModule({
   declarations: [
@@ -15,9 +17,9 @@ import { LocalWeatherListComponent } from './local-weather-list/local-weather-li
     LocalWeatherListComponent
   ],
   imports: [
-    BrowserModule, FormsModule
+    BrowserModule, FormsModule, HttpClientModule
   ],
-  providers: [],
+  providers: [WeatherService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
