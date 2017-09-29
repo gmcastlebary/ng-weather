@@ -1,7 +1,7 @@
 <div class="panel panel-default">
   <app-zipcode-entry (onNewZipCode)="(onNewZipCode($event))"></app-zipcode-entry>
   <li *ngFor="let zip of activeZips">
-    <app-local-weather></app-local-weather>
+    <app-local-weather [zip]="zip"></app-local-weather>
   </li>
 </div>
 
