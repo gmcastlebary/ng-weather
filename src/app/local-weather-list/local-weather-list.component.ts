@@ -7,6 +7,7 @@ import {Component, OnInit} from '@angular/core';
 })
 export class LocalWeatherListComponent implements OnInit {
 
+  activeZips: string[] = [];
 
   constructor() {
   }
@@ -15,7 +16,7 @@ export class LocalWeatherListComponent implements OnInit {
   }
 
   onNewZipCode(newZip: string) {
-    console.log("from List " + newZip);
+    this.activeZips.push(newZip);
   }
 
 }
