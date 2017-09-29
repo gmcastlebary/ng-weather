@@ -1,5 +1,4 @@
 import { Component, OnInit } from '@angular/core';
-import {ZipdataService} from "../zipdata.service";
 
 @Component({
   selector: 'app-local-weather',
@@ -8,7 +7,11 @@ import {ZipdataService} from "../zipdata.service";
 })
 export class LocalWeatherComponent implements OnInit {
 
-  constructor(private zipDataService: ZipdataService) { }
+  zipcode: string;
+
+  constructor(zipcode: string) {
+    this.zipcode = zipcode;
+  }
 
   ngOnInit() {
   }
