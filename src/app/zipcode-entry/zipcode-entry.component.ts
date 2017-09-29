@@ -8,7 +8,6 @@ import {ZipdataService} from '../zipdata.service';
 })
 export class ZipcodeEntryComponent implements OnInit {
 
-  zip;
 
   constructor(private zipDataService: ZipdataService) { }
 
