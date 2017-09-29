@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import {ZipdataService} from '../zipdata.service';
 
 @Component({
   selector: 'app-zipcode-entry',
@@ -7,7 +8,7 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ZipcodeEntryComponent implements OnInit {
 
-  constructor() { }
+  constructor(zipDataService: ZipdataService) { }
 
   ngOnInit() {
   }

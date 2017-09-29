@@ -5,4 +5,7 @@ export class ZipdataService {
 
   constructor() { }
 
+  addLocation(location: string) {
+    console.log(location);
+  }
 }
